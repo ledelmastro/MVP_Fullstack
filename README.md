@@ -13,7 +13,7 @@ Projeto Final de desenvolvimento de uma API Backend (Python + Flask) + Single Pa
 
 Você pode instalar as bibliotecas rodando o comando abaixo no terminal de sua IDE:
 
-``` $ python install -r requirements.txt ```
+``` $ pip install -r requirements.txt ```
 
 Para rodar a aplicação, você pode executar o comando:
 
