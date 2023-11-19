@@ -7,13 +7,13 @@ Projeto Final de desenvolvimento de uma API Backend (Python + Flask) + Single Pa
 
 1. Certifique-se de ter instalado a última versão de Python, disponível em https://www.python.org/downloads/;
 2. Com Python instalado em sua estação, clone o repositório deste projeto, em: https://github.com/ledelmastro/MVP_Fullstack
-   1.1 Caso precise de instruções para clonar o repositório, você pode encontrar um bom tutorial em:
+3. Caso precise de instruções para clonar o repositório, você pode encontrar um bom tutorial em:
    https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository;
-3. Nos arquivos disponíves, encontre **requirements.txt** e instale as biblotecas necessárias para rodar a aplicação.
+4. Nos arquivos disponíves, encontre **requirements.txt** e instale as biblotecas necessárias para rodar a aplicação.
 
 Você pode instalar as bibliotecas rodando o comando abaixo no terminal de sua IDE:
 
-''' $ pip install -r requirements.txt '''
+''' $ python install -r requirements.txt '''
 
 Para rodar a aplicação, você pode executar o comando:
 
