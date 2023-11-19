@@ -1,0 +1,346 @@
+{
+  "info": {
+    "title": "Projeto API Simples de Busca Imoveis",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/login": {
+      "post": {
+        "requestBody":{
+          "required": ["login","password"],
+            "content": {
+            "application/json": {
+              "schema": {
+               "$ref": 
+                 "#components/schemas/body_response"
+           }}}},
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Login realizado com sucesso"
+          }
+        },
+        "summary": "Realiza login de usuario"
+      }
+    },
+    "/imoveis": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Imoveis encontrados com sucesso."
+          }
+        },
+        "summary": "Lista todos os imoveis cadastrados."
+      }
+    },
+    "/cadastro": {
+      "post": {
+        "requestBody":{
+          "required": ["login","password"],
+            "content": {
+            "application/json": {
+              "schema": {
+               "$ref":"#components/schemas/body_request"
+           }}}},
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Usuario criado com sucesso."
+          }
+        },
+        "summary": "Cria novo cadastro"
+      }
+    },
+    "/user/{id_user}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_user",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Usuario localizado com sucesso."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Usuario nao encontrado"
+          }
+        },
+        "summary": "Encontra usuario por ID"
+      },
+      "delete": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_user",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Usuario deletado com sucesso."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Usuario nao encontrado."
+          }
+        },
+        "summary": "Exclui usuario do banco de dados"
+      }
+    },
+    "/imoveis/{id_imovel}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_imovel",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Imovel localizado"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Imovel nao encontrado"
+          }
+        },
+        "summary": "Localiza imovel por ID."
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_imovel",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody":{
+          "required": ["cidade_imovel", "end_imovel","tipo_imovel", "area_imovel","quartos_imovel", "banheiros_imovel","valor_imovel", "descricao_imovel"],
+            "content": {
+            "application/json": {
+              "schema": {
+                "$ref":"#components/schemas/body_request_imovel"
+            }}}},
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Imovel criado com sucesso."
+          }
+        },
+        "summary": "Cria novo Imovel"
+      },
+      "put": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_imovel",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody":{
+          "required": ["cidade_imovel", "end_imovel","tipo_imovel", "area_imovel","quartos_imovel", "banheiros_imovel","valor_imovel", "descricao_imovel"],
+            "content": {
+            "application/json": {
+              "schema": {
+                "$ref":"#components/schemas/body_request_imovel"
+            }}}},
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Imovel alterado com sucesso."
+          }
+        },
+        "summary": "Altera Imovel no Cadastro"
+      },
+      "delete": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_imovel",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Cadastro deletado com sucesso."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Nao foi possivel deletar o cadastro. Tente novamente."
+          }
+        },
+        "summary": "Exclui imovel do banco de dados"
+      }
+    }
+  },
+  "openapi": "3.0.3",
+  "components": {
+    "schemas": {
+      "HTTPError": {
+        "properties": {
+          "detail": {
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          }
+        }},
+          "body_request": {
+            "type": "object",
+            "required": true,
+          "properties": {
+            "login": {
+            "type": "string",
+            "exemple": "Elena@gmail.com"
+          },
+            "password": {
+            "type": "string",
+            "example": 123
+          }}},
+          "body_response": {
+            "type": "object",
+            "required": true,
+          "properties": {
+            "login": {
+            "type": "string",
+            "exemple": "Elena@gmail.com"
+          },
+            "password": {
+            "type": "string",
+            "example": 123
+          }}},
+          "body_request_imovel": {
+            "type": "object",
+            "required": true,
+          "properties": {
+            "cidade_imovel": {
+            "type": "string",
+            "example": "Rio de Janeiro"
+          },
+            "end_imovel": {
+            "type": "string",
+            "example": "Rua das Laranjeiras"
+          },
+            "tipo_imovel": {
+            "type": "string",
+            "example": "Apartamento"
+          },
+            "area_imovel": {
+            "type": "integer",
+            "example": 120.00
+          },
+            "quartos_imovel": {
+            "type": "integer",
+            "example": 120.00
+          },
+            "banheiros_imovel": {
+            "type": "integer",
+            "example": 120.00
+          },
+            "garagem_imovel": {
+            "type": "integer",
+            "example": 120.00
+          },
+            "valor_imovel": {
+            "type": "string",
+            "example": "1500.00"
+          },
+            "descricao_imovel": {
+            "type": "string",
+            "example": "Sobrado mobiliado, area total 130 m2.."
+          }
+        }},
+        "type": "object"
+      }
+    }
+  }
