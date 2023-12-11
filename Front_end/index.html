@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóvel Rent</title>
+    <link rel="stylesheet" href="styles.css" media="screen">
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <hgroup>
+                <h1>Cadastre seu Imóvel</h1>
+                <i>Imóvel Rent</i>
+            </hgroup>
+        </div>
+    </header>
+    <section class="site">
+        <nav>
+            <a></a>
+        </nav>
+    </section>
+    <p> </p>
+    <div class="container">
+        <div class="flex-container">
+            <div class="form-container">
+                <div class="form-container-in">
+                    <div>
+                        <form encType="multipart/form-data">
+                        <section class="newItem">
+                            <label for="f_nome">Nome</label>
+                            <input type="text" id="f_nome" placeholder="Ex. Maria dos Santos Reis" required>
+                            <label for="f_tel">Telefone</label>
+                            <input type="tel" id="f_tel" placeholder="Ex. (11) 987654321">
+                            <label for="f_mail">E-mail</label>
+                            <input type="email" id="f_mail"placeholder="Ex. e-mail@e-mail.com">
+                            <label for="f_end">Endereço</label>
+                            <input type="text" id="f_end" placeholder="Ex. Rua dos Desbravadores, 1234">
+                            <label for="f_tipo">Tipo de Imóvel</label>
+                            <select id="f_tipo" name="tipo">
+                                <option value="casa">Casa Térrea</option>
+                                <option value="apto">Apartamento</option>
+                                <option value="sobrado">Sobrado</option>
+                            </select>
+                            <label for="farea">Área do Imóvel</label>
+                            <input type="text" id="f_area"name="area" placeholder="Ex. 50 m²" required>
+                            <label for="fquartos">Quartos</label>
+                            <input type="text" id="f_quartos" placeholder="Ex. 2 quartos" required>
+                            <label for="fabanheiros">Banheiros</label>
+                            <input type="text" id="f_banheiros" placeholder="Ex. 3 banheiros" required>
+                            <label for="fvagas">Vagas de Garagem</label>
+                            <input type="text" id="f_vagas" placeholder="Ex. 2 vagas de garagem" required>
+                            <label for="faluguel">Valor do Aluguel</label>
+                            <input type="text" id="f_valor" placeholder="Ex. R$ 4.680,00" required>
+                            <label for="fimagens">Imagens do Imóvel</label>
+                            <input type="file" id="f_imagens" name="file" multiple accept="image/*">
+                            <input type="submit" onclick="newItem()" class="botao" value="Enviar">
+                        </section>
+                        </form>
+                                <section class="table" overflow-x:auto>
+                                    <table id="my_table">
+                                        <th>
+                                            Dados
+                                        </th>
+                                        <tr>
+                                            <!-- Dados existentes -->
+                                        </tr>                                            
+                                        <div>
+                                        <div>
+                                    </table>
+                                <span id="preview"></span>
+                                </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+
+</body>
+
+</html>
